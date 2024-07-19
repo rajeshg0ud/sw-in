@@ -3,8 +3,8 @@ import { getAllRestaurants, getRestaurantById } from '../controllers/restaurantC
 
 const restaurantRouter= express.Router();
 
-restaurantRouter.post('/:id', getRestaurantById);
+restaurantRouter.get('/:id', getRestaurantById);
 
-restaurantRouter.post('/', getAllRestaurants);
+restaurantRouter.get('/', getAllRestaurants);
 
 export default restaurantRouter;
