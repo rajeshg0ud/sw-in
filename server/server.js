@@ -5,6 +5,7 @@ import dotenv from 'dotenv';
 import connectToDB from "./db.js";
 import userRouter from "./routes/userRoutes.js";
 import cookieParser from 'cookie-parser';
+import orderRouter from "./routes/orderRoutes.js";
 dotenv.config();
 const app= express();
 
@@ -29,6 +30,7 @@ app.use(cookieParser());
 
 
 app.use('/api/restaurants', restaurantRouter);
+app.use('/api/orders', orderRouter);
 
 app.use('/api/user', userRouter);
 
