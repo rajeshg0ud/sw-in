@@ -16,8 +16,8 @@ const orderSchema= mongoose.Schema({
     orderItems:[{
         itemId: {type: String, required: true},
         itemName:{type: String, required: true},
-        imageUrl:{type: String, required: true},
-        itemPrice:{type: Number, required: true},
+        imageUrl:{type: String },
+        itemPrice:{type: String, required: true},
         quantity: {type: Number, required: true},
     }],
     shippingAddress:{
@@ -38,9 +38,9 @@ const orderSchema= mongoose.Schema({
     shippingPrice:{type: Number, required: true, default:0.0},
     totalPrice:{type: Number, required: true, default:0.0},
     isPaid:{type: Boolean, required: true, default:false},
-    paidAt: {type: Date},
-},{
-    timeStamps: true
+    paidAt: { type: Date }
+}, {
+    timestamps: true
 })
 
 
