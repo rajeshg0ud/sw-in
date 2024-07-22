@@ -51,5 +51,17 @@ const signup= asyncHandler(async(req, res)=>{
     
 })
 
+const signout= asyncHandler(async(req, res)=>{
+    res.clearCookie('jwt',{
+        httpOnly: true,
+        secure: process.env.NODE_ENV !== 'development',
+        sameSite: 'None',
+        path: '/'
+    })
+    
 
-export {login, signup};
+    res.status(200).json('Logged out successfully');
+})
+
+
+export {login, signup, signout};
