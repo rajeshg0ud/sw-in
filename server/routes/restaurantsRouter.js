@@ -5,6 +5,6 @@ const restaurantRouter= express.Router();
 
 restaurantRouter.get('/:id', getRestaurantById);
 
-restaurantRouter.get('/', getAllRestaurants);
+restaurantRouter.post('/', getAllRestaurants);
 
 export default restaurantRouter;

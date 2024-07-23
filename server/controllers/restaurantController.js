@@ -16,9 +16,14 @@ const getRestaurantById= asyncHandler(async(req, res)=>{
 
 })
 
-const getAllRestaurants= asyncHandler(async(req, res)=>{
+const getAllRestaurants = asyncHandler(async (req, res) => {
+  const keyword= req.query.keyword ? req.query.keyword.toLowerCase(): "";
 
-    res.json(data)
-})
+  console.log(keyword )
+  const restaurants= data.filter((restaurant) =>
+    restaurant.info.name.toLowerCase().includes(keyword)
+  )
+  res.status(200).json(restaurants);
+});
 
 export {getRestaurantById, getAllRestaurants};
